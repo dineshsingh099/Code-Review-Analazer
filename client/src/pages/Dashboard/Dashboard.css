@@ -1,0 +1,224 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Fira Code', monospace;
+  background-color: #0f0f1a;
+}
+
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-section {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  height: 100%;
+}
+
+.editor-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a2e;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  height: 100%;
+  overflow: hidden;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.editor-header button,
+.upload-btn {
+  background-color: #0c0c25;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.upload-btn input {
+  display: none;
+}
+
+.code-input {
+  flex: 1;
+  background-color: #0c0c25;
+  color: #dcdcdc;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  resize: vertical;
+  overflow-y: auto;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
+}
+
+.analyze-btn {
+  margin-top: 10px;
+  background-color: #00897b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 20px;
+  align-self: flex-end;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.analyze-btn:hover {
+  background-color: #26a69a;
+}
+
+.analyze-btn.processing {
+  background-color: #ffb300;
+  color: #fff;
+  cursor: wait;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px #ff9800; }
+  50% { box-shadow: 0 0 15px #ffb74d; }
+  100% { box-shadow: 0 0 5px #ff9800; }
+}
+
+/* Output panel container */
+.code-output {
+  background-color: #1e1e2e; /* Dark background for contrast */
+  color: #f5f5f5;           /* Light text */
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  height: 100vh;            /* Fixed height, scrollable if overflow */
+  overflow-y: auto;         /* Vertical scroll if content exceeds height */
+  overflow-x: auto;         /* Horizontal scroll for long lines */
+  font-family: 'Fira Code', 'Courier New', monospace; /* Monospace font for code */
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre;         /* Preserve formatting exactly */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Highlight when hovered */
+.code-output:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Copy button alignment */
+.editor-panel .editor-header button {
+  background: transparent;
+  border: none;
+  color: #f5f5f5;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.editor-panel .editor-header button:hover {
+  color: #66bb6a; /* Green hover */
+}
+
+/* Ensure the <pre> inside code-output takes full width */
+.code-output pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre; /* preserve spaces & line breaks */
+}
+
+
+
+.history-panel {
+  width: 220px;
+  background-color: #1e1e2e;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.history-panel h3 {
+  margin: 0 0 10px 0;
+  color: #90caf9;
+  font-size: 16px;
+  text-align: center;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #2a2a3a;
+}
+
+.history-item:hover {
+  background-color: #3949ab;
+}
+
+.history-item.selected {
+  background-color: #5c6bc0;
+}
+
+.prompt-text {
+  font-size: 14px;
+  color: #c5cae9;
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+.time {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.empty {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+  margin-top: 20px;
+}

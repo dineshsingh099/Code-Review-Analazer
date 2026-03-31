@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app {
+  width: 100vw;
+  min-height: 180vh;
+  background-image: url('../../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding-top: 70px; 
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.logo span {
+  font-size: 28px;
+  color: orangered;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: orangered;
+  transition: 0.3s ease-in-out;
+}
+
+.home-btn {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-btn span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 3px solid;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.home-btn span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom right, #4B00FF, #00BFFF);
+  opacity: 1;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.home-btn span:hover::after {
+  box-shadow: 0 0 25px #4B00FF, 0 0 25px #00BFFF, 0 0 40px #4B00FF66, 0 0 40px #00BFFF66;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 150px 50px 0 50px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.content p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.about {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 10px auto;
+  color: #555;
+  line-height: 1.6;
+}
