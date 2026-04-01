@@ -13,7 +13,7 @@
     "@monaco-editor/react": "^4.7.0",
     "ace-builds": "^1.43.3",
     "axios": "^1.12.1",
-    "monaco-editor": "^0.54.0",
+    "monaco-editor": "^0.55.1",
     "prettier": "^3.6.2",
     "react": "^19.1.1",
     "react-ace": "^14.0.1",
